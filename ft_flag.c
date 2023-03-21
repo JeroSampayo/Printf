@@ -27,6 +27,6 @@ int	ft_flag(const char *str, va_list args, int i)
 	else if (*str == 'x')
 		i = ft_puthex(va_arg(args, unsigned int), "0123456789abcdef", i);
 	else if (*str == 'X')
-       i =  ft_puthex(va_arg(args, unsigned int), "0123456789ABCDEF", i);
+      		i =  ft_puthex(va_arg(args, unsigned int), "0123456789ABCDEF", i);
 	return (i);
 }
