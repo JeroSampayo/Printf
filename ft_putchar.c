@@ -6,15 +6,15 @@
 /*   By: jmiras-s <jmiras-s@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 22:21:33 by jmiras-s          #+#    #+#             */
-/*   Updated: 2023/03/15 12:28:52 by jmiras-s         ###   ########.fr       */
+/*   Updated: 2023/03/21 15:32:32 by jmiras-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <printf.h>
+#include "ft_printf.h"
 
-int	ft_putchar(char c, int i)
+int	ft_putchar(char c)
 {
 	if (write(1, &c, 1) == 1)
-		return (++i);
+		return (1);
 	return (-1);
 }

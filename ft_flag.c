@@ -6,27 +6,33 @@
 /*   By: jmiras-s <jmiras-s@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 22:25:58 by jmiras-s          #+#    #+#             */
-/*   Updated: 2023/03/15 12:28:31 by jmiras-s         ###   ########.fr       */
+/*   Updated: 2023/03/21 17:34:15 by jmiras-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-int	ft_flag(const char *str, va_list args, int i)
+int	ft_flag(const char *str, va_list args)
 {
 	if (*str == 'c')
-		i =  ft_putchar(va_arg(args, int), i);
-	else if	(*str == 's')
-		i = ft_putstr(va_arg(args, char*), i);
-	else if	(*str == 'd')
-		i = ft_putnbr(va_arg(args, int), i);
-	else if	(*str == 'i')
-		i = ft_putnbr(va_arg(args, int), i);
-	else if	(*str == 'p')
-		i = ft_putptr(va_arg(args, void*), i);
+		return (ft_putchar(va_arg(args, int)));
+	else if (*str == 's')
+		return (ft_putstr(va_arg(args, const char*)));
+	else if (*str == 'd')
+		return (ft_putnbr(va_arg(args, int), 0));
+	else if (*str == 'i')
+		return (ft_putnbr(va_arg(args, int), 0));
+	else if (*str == 'p')
+		return (ft_putptr(va_arg(args, unsigned long)));
+	else if (*str == 'u')
+		return (ft_putnbr(va_arg(args, unsigned int), 1));
 	else if (*str == 'x')
-		i = ft_puthex(va_arg(args, unsigned int), "0123456789abcdef", i);
+		return (ft_puthex(va_arg(args, unsigned int), BASEHEXL));
 	else if (*str == 'X')
-      		i =  ft_puthex(va_arg(args, unsigned int), "0123456789ABCDEF", i);
-	return (i);
+		return (ft_puthex(va_arg(args, unsigned int), BASEHEXU));
+	else if (*str == '%')
+		return (ft_putchar('%'));
+	else
+		++str;
+	return (0);
 }
