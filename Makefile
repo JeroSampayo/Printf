@@ -6,7 +6,7 @@
 #    By: jmiras-s <jmiras-s@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/15 11:07:07 by jmiras-s          #+#    #+#              #
-#    Updated: 2023/03/21 15:46:49 by jmiras-s         ###   ########.fr        #
+#    Updated: 2023/03/21 17:46:34 by jmiras-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ MK		= mkdir -p
 #-i texto -I carpeta
 INCLUDE = -I./
 
-SRC = ft_printf.c ft_flag.c ft_putchar.c ft_puthex.c ft_putnbr.c ft_putptr.c ft_putstr.c \
+SRC = ft_printf.c ft_flag.c ft_putchar.c ft_puthex.c ft_putnbr.c ft_putptr.c ft_putstr.c 
 
 # Ficheros objeto resultantes de compilar los archivos fuente
 OBJ = $(addprefix $(OBJ_DIR), $(SRC:.c=.o))

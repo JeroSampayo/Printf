@@ -6,7 +6,7 @@
 /*   By: jmiras-s <jmiras-s@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 14:42:58 by jmiras-s          #+#    #+#             */
-/*   Updated: 2023/03/21 17:24:28 by jmiras-s         ###   ########.fr       */
+/*   Updated: 2023/03/21 18:30:37 by jmiras-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	ft_printf(const char *str, ...)
 			else
 				vals.count += vals.ecount;
 		}
-		else
+		else if (*str != '%')
 		{
 			if (ft_putchar(*str) == -1)
 				vals.count = -1;
