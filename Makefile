@@ -6,14 +6,14 @@
 #    By: jmiras-s <jmiras-s@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/15 11:07:07 by jmiras-s          #+#    #+#              #
-#    Updated: 2023/03/16 11:21:50 by jmiras-s         ###   ########.fr        #
+#    Updated: 2023/03/15 12:25:26 by jmiras-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # ----- NAME -
 
 # Comentario
-NAME = libftprintf.a
+NAME = printf.a
 
 MKFL	= Makefile
 
@@ -43,14 +43,15 @@ OBJ = $(addprefix $(OBJ_DIR), $(SRC:.c=.o))
 DEP = $(addsuffix .d, $(basename $(OBJ)))
 
 # ----- RULE -
-# Regla para crear los archivos objeto a partir de los archivos fuente mt mmd mp(phony)
+# Regla para crear los archivos objeto a partir de los archivos fuente
 $(OBJ_DIR)%.o: %.c $(MKFL)
 	$(MK) $(dir $@)
 	$(CC) $(CFLAGS) -MT $@ -MMD -MP $(INCLUDE) -c $< -o $@
 
 
 # ----- Regla para construir el archivo final (biblioteca estática)
-all: $(NAME)
+all:
+	$(MAKE) $(NAME)
 
 # ar (CREACION Y COMPILACION LIBRERIA)
 

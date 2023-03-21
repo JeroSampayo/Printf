@@ -6,28 +6,17 @@
 /*   By: jmiras-s <jmiras-s@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 22:22:34 by jmiras-s          #+#    #+#             */
-/*   Updated: 2023/03/20 17:33:26 by jmiras-s         ###   ########.fr       */
+/*   Updated: 2023/03/15 12:30:26 by jmiras-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include <printf.h>
 
-int	ft_putstr(const char *s)
+int	ft_putstr(const char *s, int i)
 {
-	int	i;
-
-	i = 0;
 	if (!s)
-	{
-		if (write(1, "(null)", 6) < 0)
-			return (-1);
-		return (6);
-	}
+		return (write(1, "(null)", 6));
 	while (*s)
-	{
-		if (ft_putchar(*s++) < 0)
-			return (-1);
-		i++;
-	}
+		i = ft_putchar(*s++, i);
 	return (i);
 }
