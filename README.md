@@ -19,13 +19,22 @@ La función printf() es una herramienta muy útil en el lenguaje de programació
 
 
 ### •[ft_flag](ft_flag.c)•<br>
-#### ft_flag: Checks <br>
+#### ft_flag: Checks if the position is equal to one of the placeholders, otherwise prints on the screen and returns the printout.<br>
+#### ft_flag: Revisa si la posicion es igual a uno de los placeholders, en caso contrario imprime por pantalla y retorna la impresión.<br>
 ##### [Description ft_flag]<br>
- 
- 
+-Function it enters once it detects that you are in the position you are in to check the different placeholders.
+In this case I have taken into account the following flags. %c %d %d %d %i %p %u %x %x %X %%
+If none of the flags match, it prints on the screen and counts a printout.
+
+-Función en la que entra una vez detecta que en la posicion en la que se encuentra para revisar los diferentes placeholders.
+En este caso he tenido en cuenta las siguientes flags. %c %d  %d %i %p %u %x %X %%
+Si no coinciden ninguna de las flags, imprime por pantalla y cuenta una impresion.
+
+PD: I have implemented the Strchr function that I wanted to use to improve it with an additional flag but finally I have not used it, I will modify it soon.<br>
+
 ### •[ft_putchar](ft_putchar.c)•<br>
-#### ft_putchar: Checks<br>
-##### [Description ft_putchar]<br>
+#### ft_putchar: Prints on the screen the character where it is found if it finds and prints count one, otherwise it returns -1.<br>
+#### ft_putchar: Imprime por pantalla el caracter en el que se encuentra si encuentra e imprime cuenta uno, sino devuelve -1.<br>
 
 
 ### •[ft_puthex](ft_puthex.c)•<br>
@@ -34,9 +43,13 @@ La función printf() es una herramienta muy útil en el lenguaje de programació
 
 
 ### •[ft_putnbr](ft_putnbr.c)•<br>
-#### ft_putnbr: 
+#### ft_putnbr: Sends the integer 'n' to the standard output.<br>
+#### ft_putnbr: Envía el número entero 'n' a la salida estándar.<br>
 ##### [Description ft_putnbr]<br>
-
+-Protecting all cases of putchar or putnbr recursive so that in case of error it concatenates a -1 for all previous functions.
+We create the function ft_stou that converts an int to an unsigned when it is not negative so that it has more numerical capacity.<br>
+-Protegiendo en todos los casos de putchar o putnbr recursivo  para que en el caso de dar error concatene un -1 por todas las funciones anteriores
+Creamos la funcion ft_stou que convierta un int en un unsigned cuando no sea negativo para que tenga mas capacidad numerica.<br>
    
 ### •[ft_putptr](ft_putptr.c)•<br>
 #### ft_putptr:<br>
@@ -56,4 +69,6 @@ La función printf() es una herramienta muy útil en el lenguaje de programació
 ### •[Makefile](Makefile.c)•<br>
 #### Makefile.c: <br>
 ##### [Description Makefile.c]<br>
+A makefile contains the commands to be executed by the make utility, as well as the dependencies between the different modules of the project. This description file is a text file.
 
+El fichero makefile contiene las órdenes que debe ejecutar la utilidad make , así como las dependencias entre los distintos módulos del proyecto. Este archivo de descripción es un fichero de texto.
